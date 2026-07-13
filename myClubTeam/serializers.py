@@ -35,7 +35,7 @@ class playermatchscoreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = playermatchscore
-        fields = ["player","goal_in_match"]
+        fields = ["player","goal_in_match","min_goal"]
 
 class MatchSerializer(serializers.ModelSerializer):
      
@@ -61,6 +61,7 @@ class MatchSerializer(serializers.ModelSerializer):
                  match=match,
                  player=player,
                  goal_in_match=name["goal_in_match"],
+                 min_goal=name["min_goal"]
                  
                  
                 )

@@ -123,7 +123,7 @@ class playermatchscore(models.Model):
 
     player = models.ForeignKey(Player,on_delete=models.CASCADE,related_name="goals")
     goal_in_match = models.PositiveIntegerField(default=1)
-    
+    min_goal=models.PositiveIntegerField(default=1)
 
     def __str__(self):
         return self.player.name
