@@ -34,8 +34,6 @@ urlpatterns = [
      
     path("", include(router.urls)),
     path("matches/",MatchListCreateView.as_view()),
-    path("matches/",MatchListCreateView.as_view()),
-    path("matches/",MatchListCreateView.as_view()),
     path("standings/",StandingListAPIView.as_view()),
     path("top-scorer/",TopScorerAPIView.as_view()),
       

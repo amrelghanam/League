@@ -5,8 +5,8 @@ from .models import Team, Player, Match, Standing,playermatchscore
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = ["id", "name", "position", "number"]
-
+        fields = ["id", "team","name", "position", "number",]
+        
 
 class TeamSerializer(serializers.ModelSerializer):
     players = PlayerSerializer(many=True, read_only=True)
@@ -35,7 +35,7 @@ class playermatchscoreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = playermatchscore
-        fields = ["player","goal_in_match","min_goal"]
+        fields = ["player","goal_in_match"]
 
 class MatchSerializer(serializers.ModelSerializer):
      
@@ -61,7 +61,6 @@ class MatchSerializer(serializers.ModelSerializer):
                  match=match,
                  player=player,
                  goal_in_match=name["goal_in_match"],
-                 min_goal=name["min_goal"]
                  
                  
                 )
