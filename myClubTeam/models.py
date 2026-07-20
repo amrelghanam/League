@@ -119,9 +119,9 @@ class Match(models.Model):
     
 class playermatchscore(models.Model):
 
-    match = models.ForeignKey(Match,on_delete=models.CASCADE,related_name="goals")
+    match = models.ForeignKey(Match,on_delete=models.CASCADE,related_name="matchgoals")
 
-    player = models.ForeignKey(Player,on_delete=models.CASCADE,related_name="goals")
+    player = models.ForeignKey(Player,on_delete=models.CASCADE,related_name="playergoals")
     goal_in_match = models.PositiveIntegerField(default=1)
 
     def __str__(self):

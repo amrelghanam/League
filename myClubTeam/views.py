@@ -38,7 +38,7 @@ class TopScorerAPIView(APIView):
     permission_classes = [AllowAny]
     def get(self, request):
 
-        player = Player.objects.all().order_by("-goals").first()
+        player = Player.objects.all().order_by("-Allgoals").first()
 
         serializer = TopScorerSerializer(player)
 

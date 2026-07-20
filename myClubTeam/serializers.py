@@ -39,7 +39,7 @@ class playermatchscoreSerializer(serializers.ModelSerializer):
 
 class MatchSerializer(serializers.ModelSerializer):
      
-    goals = playermatchscoreSerializer(many=True)
+    goals = playermatchscoreSerializer(source="matchgoals",many=True)
 
     class Meta:
         model = Match
@@ -49,7 +49,7 @@ class MatchSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         
          print(validated_data)
-         score_names = validated_data.pop("goals")
+         score_names = validated_data.pop("matchgoals")
          print(validated_data)
          match = Match.objects.create(**validated_data)
          print(score_names)
